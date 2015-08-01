@@ -17,7 +17,7 @@ set(PROG_TYPE     arduino)
 # the microview programmer
 #set(PROG_DEV     /dev/cu.usbserial-DA00UCWL)
 # the arduino uno usb
-set(PROG_DEV    /dev/cu.usbmodem1411)
+set(PROG_DEV    /dev/cu.usbmodem1421)
 
 set(MONITOR      screen)
 set(MONITOR_ARGS ${PROG_DEV} ${BAUD})
