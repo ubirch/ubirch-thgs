@@ -71,7 +71,7 @@ void mediabuttons() ;
 
 void setup(void) {
     Serial.begin(9600);
-    Serial.print("Hello! professorbunsens ST7735 TFT Test");
+    Serial.print("Hello! professorbunsen, I presume? ");
 
     // Use this initializer if you're using a 1.8" TFT
     tft.initR(INITR_BLACKTAB);   // initialize a ST7735S chip, black tab
