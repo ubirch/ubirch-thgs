@@ -22,6 +22,7 @@
 #include <Arduino.h>
 
 #define LED 13
+#define XXX 1
 
 void setup() {
     // set the LED pin to be an output pin
