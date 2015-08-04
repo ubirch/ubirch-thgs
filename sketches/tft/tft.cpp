@@ -74,10 +74,10 @@ void setup(void) {
     Serial.print("Hello! professorbunsen, I presume? ");
 
     // Use this initializer if you're using a 1.8" TFT
-    tft.initR(INITR_BLACKTAB);   // initialize a ST7735S chip, black tab
+    //tft.initR(INITR_BLACKTAB);   // initialize a ST7735S chip, black tab
 
     // Use this initializer (uncomment) if you're using a 1.44" TFT
-    //tft.initR(INITR_144GREENTAB);   // initialize a ST7735S chip, black tab
+    tft.initR(INITR_144GREENTAB);   // initialize a ST7735S chip, black tab
 
     Serial.println("Initialized");
 
@@ -109,7 +109,7 @@ void setup(void) {
     testfastlines(ST7735_RED, ST7735_BLUE);
     delay(500);
 
-    testdrawrects(ST7735_GREEN);
+    testrects(ST7735_GREEN);
     delay(500);
 
     testfillrects(ST7735_YELLOW, ST7735_MAGENTA);
