@@ -59,10 +59,10 @@ void setup(void) {
     Serial.print("Hello! professorbunsen, I presume? ");
 
     // Use this initializer if you're using a 1.8" TFT
-    tft.initR(INITR_BLACKTAB);   // initialize a ST7735S chip, black tab
+    //tft.initR(INITR_BLACKTAB);   // initialize a ST7735S chip, black tab
 
     // Use this initializer (uncomment) if you're using a 1.44" TFT
-    //tft.initR(INITR_144GREENTAB);   // initialize a ST7735S chip, black tab
+    tft.initR(INITR_144GREENTAB);   // initialize a ST7735S chip, black tab
 
 
     Serial.println("Initialized");
@@ -77,6 +77,7 @@ void setup(void) {
 }
 
 void loop(void) {
+
     // text x
     tft.fillScreen(ST7735_BLACK);
     testdrawtext("Als professorbunsen eines Morgens aus unruhigen Traumen erwachte, fand er seinen Bett zu einem ungeheueren Zettelkasten verwandelt.", ST7735_WHITE);
