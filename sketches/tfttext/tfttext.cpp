@@ -74,12 +74,21 @@ void setup(void) {
     Serial.println(time, DEC);
     delay(500);
 
-    // large block of text
-    tft.fillScreen(ST7735_BLACK);
-    testdrawtext("Als Gregor Samsa eines Morgens aus unruhigen Träumen erwachte, fand er sich in seinem Bett zu einem ungeheueren Ungeziefer verwandelt. Er lag auf seinem panzerartig harten Rücken und sah, wenn er den Kopf ein wenig hob, seinen gewölbten, braunen, von bogenförmigen Versteifungen geteilten Bauch, auf dessen Höhe sich die Bettdecke, zum gänzlichen Niedergleiten bereit, kaum noch erhalten konnte. Seine vielen, im Vergleich zu seinem sonstigen Umfang kläglich dünnen Beine flimmerten ihm hilflos vor den Augen. Was ist mit mir geschehen? dachte er. Es war kein Traum.", ST7735_WHITE);
-    delay(1000);
 }
 
 void loop(void) {
+    // text x
+    tft.fillScreen(ST7735_BLACK);
+    testdrawtext("Als professorbunsen eines Morgens aus unruhigen Traumen erwachte, fand er seinen Bett zu einem ungeheueren Zettelkasten verwandelt.", ST7735_WHITE);
+    delay(10000);
 
+    // text y
+    tft.fillScreen(ST7735_BLACK);
+    testdrawtext("Was ist mit mir geschehen?, dachte er. Es war kein Traum. Sein Zimmer, ein richtiges, nur etwas zu kleines Menschenzimmer, lag ruhig zwischen den vier wohlbekannten Wänden. Es war kein Traum", ST7735_WHITE);
+    delay(10000);
+
+    // text z
+    tft.fillScreen(ST7735_BLACK);
+    testdrawtext("Ereignisse wie diese mögen selten sein, sie sollten uns aber unbedingt zu denken geben.", ST7735_WHITE);
+    delay(10000);
 }
