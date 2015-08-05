@@ -109,7 +109,7 @@ void setup(void) {
     testfastlines(ST7735_RED, ST7735_BLUE);
     delay(500);
 
-    testrects(ST7735_GREEN);
+    testdrawrects(ST7735_GREEN);
     delay(500);
 
     testfillrects(ST7735_YELLOW, ST7735_MAGENTA);
