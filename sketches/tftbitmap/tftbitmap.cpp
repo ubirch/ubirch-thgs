@@ -271,8 +271,17 @@ void setup(void) {
 void loop(void) {
 
     // change the name here!
+    bmpDraw("bunsen.bmp", 0, 0);
+    delay(2000);
+
+    // text x
+    tft.fillScreen(ST7735_WHITE);
+    testdrawtext("Als professorbunsen  sich eines Morgens   im Spiegel erblickte,fand er sich selber  in einen ungeheuer   winzigen Roboter     verwandelt.", ST7735_RED);
+    delay(2000);
+
+    // change the name here!
     bmpDraw("robot.bmp", 0, 0);
-    delay(5000);
+    delay(2000);
 
 
 }
