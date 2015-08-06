@@ -272,7 +272,7 @@ void loop(void) {
 
     // change the name here!
     bmpDraw("robot.bmp", 0, 0);
-    delay(2000);
+    delay(5000);
 
 
 }
