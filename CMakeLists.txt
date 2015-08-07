@@ -60,7 +60,7 @@ add_definitions(-DARDUINO=10605)
 add_definitions(-DARDUINO_AVR_UNO)
 add_definitions(-DARDUINO_ARCH_AVR)
 
-set(COMPILER_FLAGS "-g -Os -Wall -Wextra -MMD -mmcu=${MCU}")
+set(COMPILER_FLAGS "-g -Os -Wall -Wno-unknown-pragmas -Wextra -MMD -mmcu=${MCU}")
 
 set(CMAKE_C_FLAGS          "${COMPILER_FLAGS} -std=gnu99 -ffunction-sections -fdata-sections")
 set(CMAKE_CXX_FLAGS        "${COMPILER_FLAGS} -fno-exceptions -ffunction-sections -fdata-sections -fno-threadsafe-statics")
