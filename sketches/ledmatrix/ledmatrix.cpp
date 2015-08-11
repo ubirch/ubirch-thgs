@@ -22,8 +22,6 @@
 #include <Wire.h>
 #include <Adafruit_LEDBackpack.h>
 
-#include "font5x5.h"
-
 Adafruit_8x8matrix matrix_70 = Adafruit_8x8matrix();
 //Adafruit_8x8matrix matrix_71 = Adafruit_8x8matrix();
 
