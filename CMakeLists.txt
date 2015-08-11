@@ -19,8 +19,7 @@ set(BAUD        115200)
 
 # set the programmer and the device to use (default is to use simavr)
 set(PROG_TYPE   arduino)
-#set(PROG_DEV    /dev/cu.usbmodem1421)
-set(PROG_DEV    /dev/cu.SLAB_USBtoUART)
+set(PROG_DEV    /dev/cu.usbmodem1421)
 
 # only needed if we do floating point math and want to print floats with printf
 #set(EXTRA_LIBS "-lm -lprintf_flt")
