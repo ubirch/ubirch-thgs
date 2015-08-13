@@ -22,13 +22,17 @@
 #include <Wire.h>
 #include <Adafruit_LEDBackpack.h>
 
+#ifndef BAUD
+#   define BAUD 9600
+#endif
+
 Adafruit_8x8matrix matrix_70 = Adafruit_8x8matrix();
 //Adafruit_8x8matrix matrix_71 = Adafruit_8x8matrix();
 
 void demo();
 
 void setup() {
-    Serial.begin(9600);
+    Serial.begin(BAUD);
     Serial.println("8x8 LED Matrix Test");
 
     // 0x70 + 00 = 0x70 DEFAULT

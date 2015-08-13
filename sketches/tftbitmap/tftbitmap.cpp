@@ -26,6 +26,9 @@ as well as Adafruit raw 1.8" TFT display
 #include <SPI.h>
 #include <SD.h>
 
+#ifndef BAUD
+#   define BAUD 9600
+#endif
 
 // For the breakout, you can use any 2 or 3 pins
 // These pins will also work for the 1.8" TFT shield
@@ -241,7 +244,7 @@ void testlines(uint16_t color) {
 }
 
 void setup(void) {
-    Serial.begin(9600);
+    Serial.begin(BAUD);
     Serial.print("Hello! professorbunsen, I presume? ");
 
     // Use this initializer if you're using a 1.8" TFT
