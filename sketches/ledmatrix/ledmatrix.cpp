@@ -32,15 +32,15 @@ void setup() {
 }
 
 static const uint8_t PROGMEM
-        smile_bmp[] =
-        { B00111100,
-          B01000010,
-          B10100101,
-          B10000001,
-          B10100101,
-          B10011001,
-          B01000010,
-          B00111100 },
+        cross_bmp[] =
+        { B00000000,
+          B00000000,
+          B00111100,
+          B00000100,
+          B00000100,
+          B00000100,
+          B00000000,
+          B00000000 },
         neutral_bmp[] =
         { B00111100,
           B01000010,
@@ -62,7 +62,7 @@ static const uint8_t PROGMEM
 
 void loop() {
     matrix.clear();
-    matrix.drawBitmap(0, 0, smile_bmp, 8, 8, LED_ON);
+    matrix.drawBitmap(0, 0, cross_bmp, 8, 8, LED_ON);
     matrix.writeDisplay();
     delay(500);
 
