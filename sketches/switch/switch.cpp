@@ -24,6 +24,7 @@
 
 Adafruit_8x8matrix matrix = Adafruit_8x8matrix();
 
+#define DEBOUNCE_TIME 1000
 #define PIN_LED 13
 #define PIN_BUTTON A0
 
@@ -203,7 +204,6 @@ static const uint8_t PROGMEM
          B11111111};
 
 
-
 void setup() {
     Serial.begin(BAUD);
     Serial.println("8x8 LED Matrix Test");
@@ -218,6 +218,7 @@ void setup() {
     matrix.writeDisplay();
 }
 
+int debounce = 0;
 int bmpState = 0;
 
 void loop() {
@@ -226,8 +227,10 @@ void loop() {
     switchState = digitalRead(PIN_BUTTON);
     //pin3
 
+    if (switchState == LOW) debounce++; else debounce = 0;
+
     // if the switch is in state high it is pressed, do something
-    if (switchState == LOW) {
+    if (debounce > DEBOUNCE_TIME) {
         digitalWrite(PIN_LED, HIGH);
 
         matrix.clear();
