@@ -1,21 +1,21 @@
-/*************************************************** 
+/***************************************************
   This is a library for our I2C LED Backpacks
 
-  Designed specifically to work with the Adafruit LED Matrix backpacks 
+  Designed specifically to work with the Adafruit LED Matrix backpacks
   ----> http://www.adafruit.com/products/872
   ----> http://www.adafruit.com/products/871
   ----> http://www.adafruit.com/products/870
 
-  These displays use I2C to communicate, 2 pins are required to 
+  These displays use I2C to communicate, 2 pins are required to
   interface. There are multiple selectable I2C addresses. For backpacks
   with 2 Address Select pins: 0x70, 0x71, 0x72 or 0x73. For backpacks
   with 3 Address Select pins: 0x70 thru 0x77
 
-  Adafruit invests time and resources providing this open source code, 
-  please support Adafruit and open-source hardware by purchasing 
+  Adafruit invests time and resources providing this open source code,
+  please support Adafruit and open-source hardware by purchasing
   products from Adafruit!
 
-  Written by Limor Fried/Ladyada for Adafruit Industries.  
+  Written by Limor Fried/Ladyada for Adafruit Industries.
   BSD license, all text above must be included in any redistribution
  ****************************************************/
 
@@ -228,75 +228,14 @@ void loop() {
         matrix.writeDisplay();
     }
 
-    matrix.clear();
-    matrix.drawBitmap(0, 0, OSN_bmp, 8, 8, LED_ON);
-    matrix.writeDisplay();
-    delay(5000);
+    // if the switch is in state high it is pressed
+    if (switchState == LOW) {
+        // do something if it is pressed, else ignore it
 
-    digitalWrite(3, LOW);
-    matrix.clear();
-    matrix.drawBitmap(0, 0, z_bmp, 8, 8, LED_ON);
-    matrix.writeDisplay();
-    delay(2000);
+        matrix.clear();
+        matrix.drawBitmap(0, 0, OSN_bmp, 8, 8, LED_ON);
+        matrix.writeDisplay();
+    }
 
-    matrix.clear();
-    matrix.drawBitmap(0, 0, y2_bmp, 8, 8, LED_ON);
-    matrix.writeDisplay();
-    delay(2000);
-
-    matrix.clear();
-    matrix.drawBitmap(0, 0, x3_bmp, 8, 8, LED_ON);
-    matrix.writeDisplay();
-    delay(2000);
-
-    matrix.clear();
-    matrix.drawBitmap(0, 0, y3_bmp, 8, 8, LED_ON);
-    matrix.writeDisplay();
-    delay(2000);
-
-    matrix.clear();
-    matrix.drawBitmap(0, 0, x4_bmp, 8, 8, LED_ON);
-    matrix.writeDisplay();
-    delay(2000);
-
-    matrix.clear();
-    matrix.drawBitmap(0, 0, y4_bmp, 8, 8, LED_ON);
-    matrix.writeDisplay();
-    delay(2000);
-
-    matrix.clear();
-    matrix.drawBitmap(0, 0, x5_bmp, 8, 8, LED_ON);
-    matrix.writeDisplay();
-    delay(2000);
-
-    matrix.clear();
-    matrix.drawBitmap(0, 0, y5_bmp, 8, 8, LED_ON);
-    matrix.writeDisplay();
-    delay(2000);
-
-    matrix.clear();
-    matrix.drawBitmap(0, 0, x6_bmp, 8, 8, LED_ON);
-    matrix.writeDisplay();
-    delay(2000);
-
-    matrix.clear();
-    matrix.drawBitmap(0, 0, y6_bmp, 8, 8, LED_ON);
-    matrix.writeDisplay();
-    delay(2000);
-
-    matrix.clear();
-    matrix.drawBitmap(0, 0, x7_bmp, 8, 8, LED_ON);
-    matrix.writeDisplay();
-    delay(2000);
-
-    matrix.clear();
-    matrix.drawBitmap(0, 0, z2_bmp, 8, 8, LED_ON);
-    matrix.writeDisplay();
-    delay(2000);
-
-    matrix.clear();
-    matrix.drawBitmap(0, 0, logoLOFinvers_bmp, 8, 8, LED_ON);
-    matrix.writeDisplay();
-    delay(5000);
 
 }
