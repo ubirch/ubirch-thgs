@@ -215,7 +215,8 @@ static const uint8_t PROGMEM
 
 void loop() {
 
-    switschState = digitalRead(2);
+    int switchState = 0;
+    switchState = digitalRead(3);
 
     matrix.clear();
     matrix.drawBitmap(0, 0, logoLOF_bmp, 8, 8, LED_ON);
@@ -227,21 +228,18 @@ void loop() {
     matrix.writeDisplay();
     delay(5000);
 
-    IF (switchState == HIGH) {
-        matrix.clear();
-        matrix.drawBitmap(0, 0, x_bmp, 8, 8, LED_ON);
-        matrix.writeDisplay();
+    IF (switchState == LOW) {
+        digitalWrite(3,HIGH);
     }
 
-    matrix.clear();
-    matrix.drawBitmap(0, 0, y_bmp, 8, 8, LED_ON);
-    matrix.writeDisplay();
-    delay(2000);
+    ELSE {
+            digitalWrite(3, LOW);
+            matrix.clear();
+            matrix.drawBitmap(0, 0, z_bmp, 8, 8, LED_ON);
+            matrix.writeDisplay();
+            delay(2000);
+    }
 
-    matrix.clear();
-    matrix.drawBitmap(0, 0, z_bmp, 8, 8, LED_ON);
-    matrix.writeDisplay();
-    delay(2000);
 
     matrix.clear();
     matrix.drawBitmap(0, 0, y2_bmp, 8, 8, LED_ON);
