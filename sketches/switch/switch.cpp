@@ -1,20 +1,16 @@
 /***************************************************
   This is a library for our I2C LED Backpacks
-
   Designed specifically to work with the Adafruit LED Matrix backpacks
   ----> http://www.adafruit.com/products/872
   ----> http://www.adafruit.com/products/871
   ----> http://www.adafruit.com/products/870
-
   These displays use I2C to communicate, 2 pins are required to
   interface. There are multiple selectable I2C addresses. For backpacks
   with 2 Address Select pins: 0x70, 0x71, 0x72 or 0x73. For backpacks
   with 3 Address Select pins: 0x70 thru 0x77
-
   Adafruit invests time and resources providing this open source code,
   please support Adafruit and open-source hardware by purchasing
   products from Adafruit!
-
   Written by Limor Fried/Ladyada for Adafruit Industries.
   BSD license, all text above must be included in any redistribution
  ****************************************************/
@@ -251,6 +247,45 @@ void loop() {
                 break;
             case 3:
                 matrix.drawBitmap(0, 0, y_bmp, 8, 8, LED_ON);
+                break;
+            case 4:
+                matrix.drawBitmap(0, 0, z_bmp, 8, 8, LED_ON);
+                break;
+            case 5:
+                matrix.drawBitmap(0, 0, y2_bmp, 8, 8, LED_ON);
+                break;
+            case 6:
+                matrix.drawBitmap(0, 0, x3_bmp, 8, 8, LED_ON);
+                break;
+            case 7:
+                matrix.drawBitmap(0, 0, y3_bmp, 8, 8, LED_ON);
+                break;
+            case 8:
+                matrix.drawBitmap(0, 0, x4_bmp, 8, 8, LED_ON);
+                break;
+            case 9:
+                matrix.drawBitmap(0, 0, y4_bmp, 8, 8, LED_ON);
+                break;
+            case 10:
+                matrix.drawBitmap(0, 0, x5_bmp, 8, 8, LED_ON);
+                break;
+            case 11:
+                matrix.drawBitmap(0, 0, y5_bmp, 8, 8, LED_ON);
+                break;
+            case 12:
+                matrix.drawBitmap(0, 0, x6_bmp, 8, 8, LED_ON);
+                break;
+            case 13:
+                matrix.drawBitmap(0, 0, y6_bmp, 8, 8, LED_ON);
+                break;
+            case 14:
+                matrix.drawBitmap(0, 0, x7_bmp, 8, 8, LED_ON);
+                break;
+            case 15:
+                matrix.drawBitmap(0, 0, z2_bmp, 8, 8, LED_ON);
+                break;
+            case 16:
+                matrix.drawBitmap(0, 0, logoLOFinvers_bmp, 8, 8, LED_ON);
                 break;
             default:
                 matrix.drawBitmap(0, 0, logoLOF_bmp, 8, 8, LED_ON);
