@@ -246,4 +246,23 @@ void loop() {
     }
 
 
+    // if the switch is in state high it is pressed
+    if (switchState == LOW) {
+        // do something if it is pressed, else ignore it
+
+        digitalWrite(PIN_LED, HIGH);
+        matrix.clear();
+        matrix.drawBitmap(0, 0, x_bmp, 8, 8, LED_ON);
+        matrix.writeDisplay();
+    }
+
+    // if the switch is in state high it is pressed
+    if (switchState == HIGH) {
+        // do something if it is pressed, else ignore it
+
+        digitalWrite(PIN_LED, LOW);
+        matrix.clear();
+        matrix.drawBitmap(0, 0, y_bmp, 8, 8, LED_ON);
+        matrix.writeDisplay();
+    }
 }
