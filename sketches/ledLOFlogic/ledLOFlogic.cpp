@@ -217,6 +217,7 @@ void loop() {
 
     int switchState = 0;
     switchState = digitalRead(3);
+    //pin3
 
     // if the switch is in state high it is pressed
     if (switchState == HIGH) {
