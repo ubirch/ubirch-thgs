@@ -24,15 +24,19 @@
 
 Adafruit_8x8matrix matrix = Adafruit_8x8matrix();
 
+#define PIN_LED 13
+#define PIN_BUTTON A0
+
 int switchState = 0;
 
 
 void setup() {
-    Serial.begin(9600);
+    Serial.begin(BAUD);
     Serial.println("8x8 LED Matrix Test");
     matrix.begin(0x70);  // pass in the address
 
-    pinMode(3, OUTPUT);
+    pinMode(PIN_LED, OUTPUT);
+    pinMode(PIN_BUTTON, INPUT_PULLUP);
 }
 
 
@@ -216,22 +220,26 @@ static const uint8_t PROGMEM
 void loop() {
 
     int switchState = 0;
-    switchState = digitalRead(3);
+    switchState = digitalRead(PIN_BUTTON);
     //pin3
+
+    Serial.println(switchState);
 
     // if the switch is in state high it is pressed
     if (switchState == LOW) {
         // do something if it is pressed, else ignore it
 
+        digitalWrite(PIN_LED, HIGH);
         matrix.clear();
         matrix.drawBitmap(0, 0, logoLOF_bmp, 8, 8, LED_ON);
         matrix.writeDisplay();
     }
 
     // if the switch is in state high it is pressed
-    if (switchState == LOW) {
+    if (switchState == HIGH) {
         // do something if it is pressed, else ignore it
 
+        digitalWrite(PIN_LED, LOW);
         matrix.clear();
         matrix.drawBitmap(0, 0, OSN_bmp, 8, 8, LED_ON);
         matrix.writeDisplay();
