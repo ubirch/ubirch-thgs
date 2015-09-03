@@ -218,6 +218,7 @@ void setup() {
     matrix.writeDisplay();
 }
 
+boolean pressed = false;
 int debounce = 0;
 int bmpState = 0;
 
@@ -230,7 +231,9 @@ void loop() {
     if (switchState == LOW) debounce++; else debounce = 0;
 
     // if the switch is in state high it is pressed, do something
-    if (debounce > DEBOUNCE_TIME) {
+    if (!pressed && debounce > DEBOUNCE_TIME) {
+        pressed = true;
+        bmpState = 0;
         digitalWrite(PIN_LED, HIGH);
 
         matrix.clear();
@@ -246,13 +249,13 @@ void loop() {
                 matrix.drawBitmap(0, 0, y_bmp, 8, 8, LED_ON);
                 break;
             default:
-                bmpState = 0;
                 matrix.drawBitmap(0, 0, logoLOF_bmp, 8, 8, LED_ON);
         }
         matrix.writeDisplay();
 
     } else {
         digitalWrite(PIN_LED, HIGH);
+        pressed = false;
     }
 
 }
