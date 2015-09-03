@@ -228,7 +228,12 @@ void loop() {
     switchState = digitalRead(PIN_BUTTON);
     //pin3
 
-    if (switchState == LOW) debounce++; else debounce = 0;
+    if (switchState == LOW) {
+        debounce++;
+    } else {
+        debounce = 0;
+        pressed = false;
+    }
 
     // if the switch is in state high it is pressed, do something
     if (!pressed && debounce > DEBOUNCE_TIME) {
@@ -249,13 +254,12 @@ void loop() {
                 break;
             default:
                 matrix.drawBitmap(0, 0, logoLOF_bmp, 8, 8, LED_ON);
+                bmpState = 0;
         }
         matrix.writeDisplay();
 
     } else {
         digitalWrite(PIN_LED, HIGH);
-        pressed = false;
-        bmpState = 0;
     }
 
 }
