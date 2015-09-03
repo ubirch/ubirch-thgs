@@ -215,8 +215,6 @@ static const uint8_t PROGMEM
 
 void loop() {
 
-    int switchState = 0;
-    switchState = digitalRead(3);
 
     matrix.clear();
     matrix.drawBitmap(0, 0, logoLOF_bmp, 8, 8, LED_ON);
@@ -228,16 +226,17 @@ void loop() {
     matrix.writeDisplay();
     delay(5000);
 
-    IF (switchState == LOW) {
-        digitalWrite(3,HIGH);
-    }
+    int switchState = 0;
+    switchState = digitalRead(3);
 
-    ELSE {
-            digitalWrite(3, LOW);
-            matrix.clear();
-            matrix.drawBitmap(0, 0, z_bmp, 8, 8, LED_ON);
-            matrix.writeDisplay();
-            delay(2000);
+    // if the switch is in state high it is pressed
+    if (switchState == HIGH) {
+        // do something if it is pressed, else ignore it
+        digitalWrite(3, LOW);
+        matrix.clear();
+        matrix.drawBitmap(0, 0, z_bmp, 8, 8, LED_ON);
+        matrix.writeDisplay();
+        delay(2000);
     }
 
 
