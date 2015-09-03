@@ -233,7 +233,6 @@ void loop() {
     // if the switch is in state high it is pressed, do something
     if (!pressed && debounce > DEBOUNCE_TIME) {
         pressed = true;
-        bmpState = 0;
         digitalWrite(PIN_LED, HIGH);
 
         matrix.clear();
@@ -256,6 +255,7 @@ void loop() {
     } else {
         digitalWrite(PIN_LED, HIGH);
         pressed = false;
+        bmpState = 0;
     }
 
 }
