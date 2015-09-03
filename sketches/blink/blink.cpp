@@ -38,10 +38,10 @@ void loop() {
     while(true) {
         // write a 1 (digital signal high)
         digitalWrite(LED, HIGH);
-        delay(1000);
+        delay(100);
         // write a 0 (digital signal low)
         digitalWrite(LED, LOW);
-        delay(2000);
+        delay(1000);
     }
 }
 #pragma clang diagnostic pop

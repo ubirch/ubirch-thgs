@@ -22,10 +22,14 @@
 #include <Wire.h>
 #include <Adafruit_LEDBackpack.h>
 
+#ifndef BAUD
+#   define BAUD 9600
+#endif
+
 Adafruit_8x8matrix matrix = Adafruit_8x8matrix();
 
 void setup() {
-    Serial.begin(9600);
+    Serial.begin(BAUD);
     Serial.println("8x8 LED Matrix Test");
 
     matrix.begin(0x70);  // pass in the address
