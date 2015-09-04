@@ -499,45 +499,71 @@ void loop() {
                 break;
             case 2:
                 matrix.drawBitmap(0, 0, x_bmp, 8, 8, LED_ON);
+                bmpDraw("x.bmp", 0, 0);
                 break;
             case 3:
                 matrix.drawBitmap(0, 0, y_bmp, 8, 8, LED_ON);
+                bmpDraw("y.bmp", 0, 0);
                 break;
             case 4:
                 matrix.drawBitmap(0, 0, z_bmp, 8, 8, LED_ON);
+                bmpDraw("z.bmp", 0, 0);
+                delay(1000);
+                bmpDraw("x2.bmp", 0, 0);
                 break;
             case 5:
                 matrix.drawBitmap(0, 0, y2_bmp, 8, 8, LED_ON);
+                bmpDraw("y2.bmp", 0, 0);
                 break;
             case 6:
                 matrix.drawBitmap(0, 0, x3_bmp, 8, 8, LED_ON);
+                bmpDraw("z2.bmp", 0, 0);
+                delay(1000);
+                bmpDraw("x3.bmp", 0, 0);
                 break;
             case 7:
                 matrix.drawBitmap(0, 0, y3_bmp, 8, 8, LED_ON);
+                bmpDraw("y3.bmp", 0, 0);
                 break;
             case 8:
                 matrix.drawBitmap(0, 0, x4_bmp, 8, 8, LED_ON);
+                bmpDraw("z3.bmp", 0, 0);
+                delay(1000);
+                bmpDraw("x.bmp", 0, 0);
                 break;
             case 9:
                 matrix.drawBitmap(0, 0, y4_bmp, 8, 8, LED_ON);
+                bmpDraw("y.bmp", 0, 0);
                 break;
             case 10:
                 matrix.drawBitmap(0, 0, x5_bmp, 8, 8, LED_ON);
+                bmpDraw("z.bmp", 0, 0);
+                delay(1000);
+                bmpDraw("x.bmp", 0, 0);
                 break;
             case 11:
                 matrix.drawBitmap(0, 0, y5_bmp, 8, 8, LED_ON);
+                bmpDraw("y.bmp", 0, 0);
                 break;
             case 12:
                 matrix.drawBitmap(0, 0, x6_bmp, 8, 8, LED_ON);
+                bmpDraw("z.bmp", 0, 0);
+                delay(1000);
+                bmpDraw("x.bmp", 0, 0);
                 break;
             case 13:
                 matrix.drawBitmap(0, 0, y6_bmp, 8, 8, LED_ON);
+                bmpDraw("y.bmp", 0, 0);
                 break;
             case 14:
                 matrix.drawBitmap(0, 0, x7_bmp, 8, 8, LED_ON);
+                bmpDraw("z.bmp", 0, 0);
+                delay(1000);
+                bmpDraw("x.bmp", 0, 0);
                 break;
             case 15:
                 matrix.drawBitmap(0, 0, z2_bmp, 8, 8, LED_ON);
+                bmpDraw("z.bmp", 0, 0);
                 break;
             case 16:
                 matrix.drawBitmap(0, 0, logoLOFinvers_bmp, 8, 8, LED_ON);
