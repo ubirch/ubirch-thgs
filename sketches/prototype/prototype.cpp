@@ -495,6 +495,7 @@ void loop() {
         switch (++bmpState) {
             case 1:
                 matrix.drawBitmap(0, 0, OSN_bmp, 8, 8, LED_ON);
+                bmpDraw("OSN.bmp", 0, 0);
                 break;
             case 2:
                 matrix.drawBitmap(0, 0, x_bmp, 8, 8, LED_ON);
@@ -542,8 +543,10 @@ void loop() {
                 matrix.drawBitmap(0, 0, logoLOFinvers_bmp, 8, 8, LED_ON);
                 break;
             default:
+                bmpDraw("logoLOF.bmp", 0, 0);
                 matrix.drawBitmap(0, 0, logoLOF_bmp, 8, 8, LED_ON);
                 bmpState = 0;
+
         }
         matrix.writeDisplay();
 
